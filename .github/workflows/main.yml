@@ -1,4 +1,4 @@
-name: Run R Script with Secret
+name: Update COnsign Cloud Products ((MSRP, Weight) 
 
 on:
   schedule:
