@@ -1,0 +1,33 @@
+name: Run R Script with Secret
+
+on:
+  schedule:
+    # Runs at 10:00 PM PST every day (cron is in UTC time zone)
+    - cron: '06 06 * * *'
+  workflow_dispatch: # Allows manual trigger of the workflow
+
+jobs:
+  run-r-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::tidyverse
+            any::httr2
+            
+      - name: Update Consign Cloud Products
+        env:
+          CC_API_KEY: ${{ secrets.CC_API_KEY }}
+        run: |
+          Rscript ConsignCloudWeightAssignR.R
