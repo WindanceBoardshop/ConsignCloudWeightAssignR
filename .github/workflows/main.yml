@@ -30,4 +30,4 @@ jobs:
         env:
           CC_API_KEY: ${{ secrets.CC_API_KEY }}
         run: |
-          Rscript ConsignCloudProductUpdate.R
+          Rscript ConsignCLoudProductUpdateR.R
