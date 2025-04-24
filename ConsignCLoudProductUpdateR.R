@@ -119,7 +119,8 @@ params <- list(
                                 category == "cc3511b8-a034-48ea-a7cf-1af8a601fc1b" ~  20,  #  Used Foil Fuselages            
                                 category == "d2421837-69f2-4ddf-8dda-2a9590f632c7" ~  30,  # Used Foil Front Wings          
                                 category == "e23f6f10-3547-466a-8999-8a0c54514e72" ~  35,  #  Used Windsurf Masts            
-                                category == "f963cef9-4c38-4f12-9e91-953649581d07" ~  45)) # Used Board Bags
+                                category == "f963cef9-4c38-4f12-9e91-953649581d07" ~  45,
+                                category == "" ~ 250)) # Used Board Bags
  
 
 # now I need to upload these item changes to consign cloud
